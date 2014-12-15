@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.badpx.webp.support.WebpDecoder;
@@ -26,8 +27,11 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        mImageView = (ImageView) findViewById(R.id.imageview);
 
+        WebView webView = (WebView) findViewById(R.id.webview);
+        webView.loadUrl("http://antimatter15.com/weppy/demo.html");
+
+        mImageView = (ImageView) findViewById(R.id.imageview);
         mImageView.setOnClickListener(this);
     }
 
